@@ -103,7 +103,8 @@ jobs:
 
       - name: 加载自定义插件
         run: |
-          rm -rf package/lean/luci-theme-argon          
+          sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
+          rm -rf package/lean/luci-theme-argon         
           cd package/lean/
           git clone -b 18.06 https://github.com/garypang13/luci-theme-edge.git
           git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git
@@ -133,10 +134,9 @@ jobs:
           [ -e files ] && mv files ./files
           [ -e $CONFIG_FILE ] && mv $CONFIG_FILE ./.config
           sed -i 's/192.168.1.1/192.168.2.2/g' package/base-files/files/bin/config_generate
-          sed -i 's@.*CYXluq4wUazHjmCDBCqXF*@#&@g' package/lean/default-settings/files/zzz-default-settings    
-          sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
-       #   sed -i 's/KERNEL_PATCHVER:=5.4/KERNEL_PATCHVER:=4.19/g' ./target/linux/x86/Makefile
-       #   sed -i 's/KERNEL_TESTING_PATCHVER:=5.4/KERNEL_TESTING_PATCHVER:=4.19/g' ./target/linux/x86/Makefile
+          sed -i 's@.*CYXluq4wUazHjmCDBCqXF*@#&@g' package/lean/default-settings/files/zzz-default-settings
+          sed -i 's/KERNEL_PATCHVER:=5.4/KERNEL_PATCHVER:=4.19/g' ./target/linux/x86/Makefile
+          sed -i 's/KERNEL_TESTING_PATCHVER:=5.4/KERNEL_TESTING_PATCHVER:=4.19/g' ./target/linux/x86/Makefile
 
 
       - name: SSH远程连接到服务器编辑自定义插件
