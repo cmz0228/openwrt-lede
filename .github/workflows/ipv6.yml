@@ -16,11 +16,11 @@ on:
   repository_dispatch:
 
 #编辑任意指定文件触发开始编译
-#  push:
-#    branches:
-#      - master
-#    paths:
-#      - 'ipv6.config'
+  push:
+    branches:
+      - master
+    paths:
+      - 'ipv6.config'
 
 #release发布触发开始编译
 #  release:
@@ -31,7 +31,7 @@ on:
 #    - cron: 0 8 2,6,8,30 * *
 
 #点星Star触发开始编译
-  watch:
+#  watch:
 #    types: started
 
 env:
