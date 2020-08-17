@@ -6,7 +6,7 @@
 - 感谢微软免费提供的编译平台
 - 感谢各位大佬提供的各种各样的插件
 - 感谢各位帮助过我的人，祝福各位好人一生平安
-
+- [coolsnowwolf/lede源码](https://github.com/281677160/shuoming/blob/master/%E6%8B%89%E5%8F%96%E4%BB%93%E5%BA%93.md)
 
 ## 快捷链接
 
